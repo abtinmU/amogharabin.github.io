@@ -1,0 +1,76 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #e8f6ff;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile-pic {
+    flex: 0 0 100px;
+}
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.profile-info {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.profile-info h1 {
+    font-size: 24px;
+}
+
+.profile-info p {
+    font-size: 16px;
+}
+
+.research {
+    background-color: #2a3b45;
+    color: #ffffff;
+    padding: 20px;
+}
+
+.research h2 {
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.projects {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.projects li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.projects .project-image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.projects h3 {
+    font-size: 18px;
+    color: #1f3b5c;
+}
+
+.projects p {
+    font-size: 14px;
+}
