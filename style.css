@@ -2,10 +2,44 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    padding-left: 100pt;
+    padding-right: 100pt;
+    background-color: #f0f8ff; 
 }
 
+/* Navigation Tabs Styling */
+nav.tabs {
+    background-color: #4682b4;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+nav.tabs ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; 
+}
+
+nav.tabs ul li {
+    display: inline-block; 
+}
+
+nav.tabs ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav.tabs ul li a:hover {
+    background-color: #315f72;
+}
+
+/* Header and Profile Styling */
 .header {
-    background-color: #e8f6ff;
+    background-color: #add8e6;
     padding: 20px;
     display: flex;
     flex-direction: row;
@@ -29,48 +63,74 @@ body {
 
 .profile-info h1 {
     font-size: 24px;
+    color: #2e4e6c;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .profile-info p {
     font-size: 16px;
+    color: #000000;
+}
+
+/* Sections Styling */
+.section {
+    padding: 20px;
+}
+
+.projects {
+    background-color: #ffebcd;
 }
 
 .research {
-    background-color: #2a3b45;
-    color: #ffffff;
-    padding: 20px;
+    background-color: #f5f5f5;
+    color: #000000;
 }
 
 .research h2 {
     font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
+    text-align: center;
+    color: #6b5b95;
 }
 
-.projects {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.projects li {
+.project-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 20px;
 }
 
-.projects .project-image {
+.project-image {
     width: 100px;
     height: 100px;
     margin-right: 20px;
 }
 
 .projects h3 {
-    font-size: 18px;
-    color: #1f3b5c;
+    font-size: 20px;
+    color: #2e4e6c;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 .projects p {
     font-size: 14px;
+    text-align: left;
+    color: #000000;
+}
+
+
+/* Teaching Section Background Color */
+.teaching {
+    background-color: #e3d7ff;
+}
+
+.teaching h2 {
+    font-size: 20px;
+    font-weight: bold.
+    text-transform: uppercase.
+    text-align: center.
+    color: #6b5b95.
 }

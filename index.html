@@ -4,92 +4,172 @@
     <meta charset="UTF-8">
     <title>Personal Website</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');  // Get all sections
+            sections.forEach(section => section.style.display = 'none');  // Hide all sections
+            
+            const targetSection = document.getElementById(sectionId);  // Find the section to display
+            if (targetSection) {
+                targetSection.style.display = 'block';  // Show the correct section
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="header">
-        <div class="profile-pic">
-            <img src="Image.png" alt="Profile Picture">
-        </div>
-        <div class="profile-info">
-            <h1>Abtin Mogharabin</h1>
-            <p>I'm a fourth-year undergraduate student at Middle East Technical University. Majring in Statistics and Minoring in Mathematics. My CV is available here.</p>
+<body onload="showSection('home')">  <!-- Default to 'Home' on load -->
+    <!-- Navigation Tabs -->
+    <nav class="tabs">
+        <ul>
+            <li><a href="javascript:void(0)" onclick="showSection('home')">Home</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('projects')">Projects</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('research')">Research</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('teaching')">Teaching</a></li>  <!-- New Teaching Tab -->
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="section home">
+        <div class="header">
+            <div class="profile-pic">
+                <img src="Files/Image.png" alt="Profile Picture">
+            </div>
+            <div class="profile-info">
+                <h1>Abtin Mogharabin</h1>
+                <p>I'm a fourth-year undergraduate student at Middle East Technical University, majoring in Statistics and minoring in Mathematics. My CV is available <a href="Files/CV.pdf" target="_blank">here</a>.</p>
+            </div>
         </div>
     </div>
 
-    <div class="Projects">
-        <h2>RESEARCH</h2>
-        <ul class="projects">
+    <!-- Projects Section -->
+    <div id="projects" class="section projects" style="display: none;">
+        <h2>PROJECTS</h2>
+        <ul>
             <li>
-                <img src="1.png" alt="Emotion and Rationality" class="project-image">
                 <h3>Emotion and Rationality in Medical Conversations</h3>
-                <p>
-                    • The term project of the graduate course: Probabilistic Models of Cognition.
-                    • In this project, I will be working on the development of a novel approach to Medical Shared Decision Making using Appraisal Theory and Rational Speech Acts models.
-                    • The implementation will be done in WebPPL probabilistic programming language.
-                    <br>Skills: Bayesian methods · Probabilistic Programming · Cognitive Science
-                </p>
+                <div class="project-content">
+                    <img src="Files/1.png" alt="Emotion and Rationality" class="project-image">
+                    <p>
+                        The term project of the graduate course: Probabilistic Models of Cognition.
+                        • In this project, I will be working on the development of a novel approach to Medical Shared Decision Making using Appraisal Theory and Rational Speech Acts models.
+                        • The implementation will be done in WebPPL probabilistic programming language.
+                        <br>Skills: Bayesian methods · Probabilistic Programming · Cognitive Science
+                    </p>
+                </div>
             </li>
 
             <li>
-                <img src="2.png" alt="CCG Semantic Parser" class="project-image">
                 <h3>CCG Semantic Parser</h3>
-                <p>
-                    In this project, I implemented some of the interesting topics I learned in COGS543 (Computational Semantics) and COGS532 (Computational Morphology and Syntax) graduate courses.
-                    • During the project, a semantic parser was implemented in Python.
-                    • For the syntactic rules, Combinatory Categorical Grammar (CCG) alongside internal merge grammar was used, and for logic and semantics, Untyped Lambda Calculus and Modality Logic were implemented.
-                    <br>Skills: Computational Linguistics · Computational Semantics · Syntax · Python
-                </p>
+                <div class="project-content">
+                    <img src="Files/2.png" alt="CCG Semantic Parser" class="project-image">
+                    <p>
+                        In this project, I implemented some of the interesting topics I learned in COGS543 (Computational Semantics) and COGS532 (Computational Morphology and Syntax) graduate courses.
+                        • During the project, a semantic parser was implemented in Python.
+                        • For the syntactic rules, Combinatory Categorical Grammar (CCG) alongside internal merge grammar was used, and for logic and semantics, Untyped Lambda Calculus and Modality Logic were implemented.
+                        <br>Skills: Computational Linguistics · Computational Semantics · Syntax · Python
+                    </p>
+                </div>
             </li>
 
             <li>
-                <img src="3.png" alt="Rational Model of Politeness" class="project-image">
                 <h3>Rational Model of Politeness</h3>
-                <p>
-                    • Implemented the rational speech acts model of politeness in Gen probabilistic programming language from scratch.
-                    <br>Skills: Social Cognition · Gen (Probabilistic Programming Language)
-                </p>
+                <div class="project-content">
+                    <img src="Files/3.png" alt="Rational Model of Politeness" class="project-image">
+                    <p>
+                        Implemented the rational speech acts model of politeness in Gen probabilistic programming language from scratch.
+                        <br>Skills: Social Cognition · Gen (Probabilistic Programming Language)
+                    </p>
+                </div>
             </li>
 
             <li>
-                <img src="4.png" alt="Scheme Interpreter" class="project-image">
                 <h3>Scheme Interpreter</h3>
-                <p>
-                    • Implemented a Scheme interpreter in Julia.
-                    • For a large part, I followed the content of SICP Textbook and Peter Noverg's Tutorials.
-                    <br>Skills: Programming Languages · Julia
-                </p>
+                <div class="project-content">
+                    <img src="Files/4.png" alt="Scheme Interpreter" class="project-image">
+                    <p>
+                        Implemented a Scheme interpreter in Julia.
+                        • For a large part, I followed the content of SICP Textbook and Peter Noverg's Tutorials.
+                        <br>Skills: Programming Languages · Julia
+                    </p>
+                </div>
             </li>
 
             <li>
-                <img src="5.png" alt="Bayesian Analysis on BART" class="project-image">
                 <h3>Bayesian Analysis on BART</h3>
-                <p>
-                    • Using Bayesian methods, multiple models were used to analyze the BART dataset (Balloon Analog Risk Task).
-                    • Bayesian Linear models, Bayesian Non-linear models, Bayesian Multi-level Models, and Bayesian Gaussian processes were implemented in the modeling process.
-                    • The implementation was done using PyMC.
-                    <br>Skills: Probabilistic Programming · Cognitive Science · PyMC
-                </p>
+                <div class="project-content">
+                    <img src="Files/5.png" alt="Bayesian Analysis on BART" class="project-image">
+                    <p>
+                        Using Bayesian methods, multiple models were used to analyze the BART dataset (Balloon Analog Risk Task).
+                        • Bayesian Linear models, Bayesian Non-linear models, Bayesian Multi-level Models, and Bayesian Gaussian processes were implemented in the modeling process.
+                        • The implementation was done using PyMC.
+                        <br>Skills: Probabilistic Programming · Cognitive Science · PyMC
+                    </p>
+                </div>
             </li>
 
             <li>
-                <img src="6.png" alt="Human Activity Recognition" class="project-image">
                 <h3>Human Activity Recognition Using Smartphones</h3>
+                <div class="project-content">
+                    <img src="Files/6.png" alt="Human Activity Recognition" class="project-image">
+                    <p>
+                        Implemented and analyzed 27 different Machine Learning models in Human Activity Recognition Using Smartphones dataset as a competitor in a Kaggle competition.
+                        <br>Skills: Machine Learning · Bayesian Methods · PyMC · PyTorch · Scikit-Learn
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <h3>Survey Project</h3>
+                <div class="project-content">
+                    <img src="Files/7.png" alt="Survey Project" class="project-image">
+                    <p>
+                        This was a four-month survey and analysis project. We conducted a survey on international students at 17 Turkish universities about their motivations, expectations, and satisfaction using the poststratification sampling method.
+                        • Analyzed the survey results by statistical inference and machine learning modules, including Logistic Regression, Naïve Bayes, K-NN, Kernel SVM, and Gradient Boosting.
+                        <br>Skills: Survey Design · Statistical Sampling · Statistical Data Analysis
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Research Section -->
+    <div id="research" class="section research" style="display: none;">
+        <h2>RESEARCH</h2>
+        <ul>
+            <li>
+                <h3>Undergraduate Researcher (Advisor: Ceylan Talu Yozgatlıgil)</h3>
                 <p>
-                    • Implemented and analyzed 27 different Machine Learning models in Human Activity Recognition Using Smartphones dataset as a competitor in a Kaggle competition.
-                    <br>Skills: Machine Learning · Bayesian Methods · PyMC · PyTorch · Scikit-Learn
+                    • Contributing to the development of Sequential Monte Carlo Models for Time Series Structure Discovery.
+                    • Working on the improvement of the fundamental O(n^3) scaling bottleneck over dense Gaussian processes.
                 </p>
             </li>
 
             <li>
-                <img src="7.png" alt="Survey Project" class="project-image">
-                <h3>Survey Project</h3>
+                <h3>Undergraduate Research Assistant (Advisor: İlkay Ulusoy)</h3>
                 <p>
-                    • This was a four-month survey and analysis project. We conducted a survey on international students at 17 Turkish universities about their motivations, expectations, and satisfaction using the poststratification sampling method.
-                    • Analyzed the survey results by the use of Statistical inference and machine learning modules, including Logistic Regression, Naïve Bayes, K-NN, Kernel SVM, and Gradient Boosting.
-                    <br>Skills: Survey Design · Statistical Sampling · Statistical Data Analysis
+                    • As the data team leader, designed and oversaw the preprocessing and analysis process of ADNI’s fMRI, MRI, and GWAS genetic datasets.
+                    • Using deep learning approaches to construct a diagnosis system for Alzheimer’s.
+                    • Worked on Dynamic Bayesian Networks developed from fMRI images, applying statistical tests and comparing Alzheimer's vs Normal Brain region’s connectivity.
+                </p>
+            </li>
+
+            <li>
+                <h3>Undergraduate Researcher (Short-Term Advisor: Ramazan Gökberk Cinbiş)</h3>
+                <p>
+                    • Contributing to the development and implementation of transformers-based deep learning models for Carotid Artery Ultrasound segmentation.
+                    • Implemented multiple deep learning-based architectures. Contributed to surpassing previous benchmark results on Carotid Artery Ultrasound segmentation.
                 </p>
             </li>
         </ul>
+    </div>
+
+    <!-- Teaching Section -->
+    <div id="teaching" class="section teaching" style="display: none;">
+        <h2>TEACHING</h2>  <!-- Section Heading -->
+        <p>
+            <strong>Student Teaching Assistant (Course Instructor: Zeynep Işıl Kalaylıoğlu)</strong><br>
+            I was a student assistant in the courses Mathematical Statistics I (STAT 303) and Mathematical Statistics II (STAT 304) during the 2022/2023 academic year.
+            There, I led office hours for undergraduate students of the same year and provided weekly individualized support and guidance on course material and problem-solving.
+        </p>
     </div>
 </body>
 </html>
