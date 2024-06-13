@@ -1907,14 +1907,15 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 */
 
 .footer {
-  position: fixed; /* Fixed positioning for placement */
-  top: 820px; /* Adjust this value for vertical positioning */
-  left: 280px; /* Adjust this value for horizontal positioning */
-  padding: 5px;
-  font-size: 12px;
-  color: #333; /* Text color */
-  line-height: 1.5; /* Adjust line height for readability */
+    position: fixed; 
+    top: 110.5vh; 
+    left: 19vw; 
+    padding: 5px;
+    font-size: 12px;
+    color: #333; 
+    line-height: 1.5; 
 }
+
 
 
   /**
