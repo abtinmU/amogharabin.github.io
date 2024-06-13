@@ -1,191 +1,841 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Personal Website</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script>
-        function showSection(sectionId) {
-            const sections = document.querySelectorAll('.section');  // Get all sections
-            sections.forEach(section => section.style.display = 'none');  // Hide all sections
-            
-            const targetSection = document.getElementById(sectionId);  // Find the section to display
-            if (targetSection) {
-                targetSection.style.display = 'block';  // Show the correct section
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.9"> <!-- Adjusted initial scale -->
+  <title>vCard - Personal Portfolio</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!-- custom css link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- google font link -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <script>
+    // JavaScript to zoom out the page
+    document.addEventListener("DOMContentLoaded", function() {
+      if (window.innerWidth >= 992) { // Apply only to desktop browsers
+        document.body.style.zoom = "0.85"; // Set the zoom level to 90%
+      }
+    });
+  </script>
 </head>
-<body onload="showSection('home')">  <!-- Default to 'Home' on load -->
-    <!-- Navigation Tabs -->
-    <nav class="tabs">
-        <ul>
-            <li><a href="javascript:void(0)" onclick="showSection('home')">Home</a></li>
-            <li><a href="javascript:void(0)" onclick="showSection('research')">Research</a></li>
-            <li><a href="javascript:void(0)" onclick="showSection('projects')">Projects</a></li>
-            <li><a href="javascript:void(0)" onclick="showSection('teaching')">Teaching</a></li>  <!-- New Teaching Tab -->
-        </ul>
-    </nav>
 
-    <!-- Home Section -->
-    <div id="home" class="section home">
-        <div class="header">
-            <div class="profile-pic">
-                <img src="Files/Image.png" alt="Profile Picture">
-            </div>
-            <div class="profile-info">
-                <h1>Abtin Mogharabin</h1>
-                <p>I'm a fourth-year undergraduate student at Middle East Technical University, majoring in Statistics and minoring in Mathematics. My CV is available <a href="Files/CV.pdf" target="_blank">here</a>.</p>
-            </div>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/profile-picture2.jpg" alt="Abtin Mogharabin">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Abtin Mogharabin">Abtin Mogharabin</h1>
+
+          <p class="title">Undergraduate RA | Deep Learning |<span class="break">Probabilistic Programming</span></p>
         </div>
-    </div>
 
-    <!-- Projects Section -->
-    <div id="projects" class="section projects" style="display: none;">
-        <h2>PROJECTS</h2>
-        <ul>
-            <li>
-                <h3>Make Me a BNN [Ongoing]</h3>
-                <div class="project-content">
-                    <img src="Files/8.png" alt="CCG Semantic Parser" class="project-image">
-                    <p>
-                        • As a part of the graduate course "Advanced Deep Learning", I will reproduce the results of the paper "Make Me a BNN: A Simple Strategy for Estimating Bayesian Uncertainty from Pre-trained Models.", CVPR 2024
-                        <br>Skills: Bayesian Deep Learnin · Python
-                    </p>
-                </div>
-            </li>
-            <li>
-                <h3>CCG Semantic Parser [Ongoing]</h3>
-                <div class="project-content">
-                    <img src="Files/2.png" alt="CCG Semantic Parser" class="project-image">
-                    <p>
-                        In this project, I implemented some of the interesting topics I learned in COGS543 (Computational Semantics) and COGS532 (Computational Morphology and Syntax) graduate courses.
-                        • During the project, a semantic parser was implemented in Python.
-                        • For the syntactic rules, Combinatory Categorical Grammar (CCG) alongside internal merge grammar was used, and for logic and semantics, Untyped Lambda Calculus and Modality Logic were implemented.
-                        <br>Skills: Computational Linguistics · Computational Semantics · Syntax · Python
-                    </p>
-                </div>
-            </li>
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
 
-            <li>
-                <h3>Scheme Interpreter</h3>
-                <div class="project-content">
-                    <img src="Files/4.png" alt="Scheme Interpreter" class="project-image">
-                    <p>
-                        Implemented a Scheme interpreter in Julia.
-                        • For a large part, I followed the content of SICP Textbook and Peter Noverg's Tutorials.
-                        <br>Skills: Programming Languages · Julia
-                    </p>
-                </div>
-            </li>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
 
-            <li>
-                <h3>Bayesian Analysis on BART</h3>
-                <div class="project-content">
-                    <img src="Files/5.png" alt="Bayesian Analysis on BART" class="project-image">
-                    <p>
-                        Using Bayesian methods, multiple models were used to analyze the BART dataset (Balloon Analog Risk Task).
-                        • Bayesian Linear models, Bayesian Non-linear models, Bayesian Multi-level Models, and Bayesian Gaussian processes were implemented in the modeling process.
-                        • The implementation was done using PyMC.
-                        <br>Skills: Probabilistic Programming · Cognitive Science · PyMC
-                    </p>
-                </div>
-            </li>
-            <li>
-                <h3>Rational Model of Politeness</h3>
-                <div class="project-content">
-                    <img src="Files/3.png" alt="Rational Model of Politeness" class="project-image">
-                    <p>
-                        Implemented the rational speech acts model of politeness in Gen probabilistic programming language from scratch.
-                        <br>Skills: Social Cognition · Gen (Probabilistic Programming Language)
-                    </p>
-                </div>
-            </li>
-            <li>
-                <h3>Human Activity Recognition Using Smartphones</h3>
-                <div class="project-content">
-                    <img src="Files/6.png" alt="Human Activity Recognition" class="project-image">
-                    <p>
-                        Implemented and analyzed 27 different Machine Learning models in Human Activity Recognition Using Smartphones dataset as a competitor in a Kaggle competition.
-                        <br>Skills: Machine Learning · Bayesian Methods · PyMC · PyTorch · Scikit-Learn
-                    </p>
-                </div>
-            </li>
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:abtin.mogharabin@metu.edu.tr" class="contact-link">abtin.mogharabin@metu.edu.tr</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="phone-portrait-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Phone</p>
+
+              <a href="tel:+12133522795" class="contact-link">+90 (552) 853-9794</a>
+            </div>
+
+          </li>
+
+
         </ul>
-    </div>
 
-    <!-- Research Section -->
-    <div id="research" class="section research" style="display: none;">
-        <h2>RESEARCH</h2>
-        <ul>
-            <li>
-                <h3>Undergraduate Researcher</h3>
-                <p>
-                    In this project I will work on Sequential Monte Carlo Models for Time Series Structure Discovery.
-                    • Working on the improvement of the fundamental O(n^3) scaling bottleneck over dense Gaussian processes.
-                    <br>Advisor: Ceylan Talu Yozgatlıgil
-                </p>
-            </li>
+        <div class="separator"></div>
 
-            <li>
-                <h3>Undergraduate Research Assistant</h3>
-                <p>
-                    As the data team leader, designed and oversaw the preprocessing and analysis process of ADNI’s fMRI, MRI, and GWAS genetic datasets.
-                    • Using deep learning approaches to construct a diagnosis system for Alzheimer’s.
-                    • Worked on Dynamic Bayesian Networks developed from fMRI images, applying statistical tests and comparing Alzheimer's vs Normal Brain region’s connectivity.
-                    <br>Advisor: İlkay Ulusoy
-                </p>
-            </li>
+        <ul class="social-list">
 
-            <li>
-                <h3>Undergraduate Researcher</h3>
-                <p>
-                    In this project I contributed to the development and implementation of transformers-based deep learning models for Carotid Artery Ultrasound segmentation.
-                    • Implemented multiple deep learning-based architectures. Contributed to surpassing previous benchmark results on Carotid Artery Ultrasound segmentation.
-                    <br>Short-Term Advisor: Ramazan Gökberk Cinbiş
-                </p>
-            </li>
-            <li>
-                <h3>Emotion and Rationality in Medical Conversations</h3>
-                <div class="project-content">
-                    <img src="Files/1.png" alt="Emotion and Rationality" class="project-image">
-                    <p>
-                        The term project of the graduate course: Probabilistic Models of Cognition.
-                        • In this project, I will be working on the development of a novel approach to Medical Shared Decision Making using Appraisal Theory and Rational Speech Acts models.
-                        • The implementation will be done in WebPPL probabilistic programming language.
-                        <br>Skills: Bayesian methods · Probabilistic Programming · Cognitive Science
-                        <br>Instructor/Advisor: Barbaros Yet
-                    </p>
-                </div>
-            </li>
-            <li>
-                <h3>Survey Project</h3>
-                <div class="project-content">
-                    <img src="Files/7.png" alt="Survey Project" class="project-image">
-                    <p>
-                        This was a four-month survey and analysis project. We conducted a survey on international students at 17 Turkish universities about their motivations, expectations, and satisfaction using the poststratification sampling method.
-                        • Analyzed the survey results by statistical inference and machine learning modules, including Logistic Regression, Naïve Bayes, K-NN, Kernel SVM, and Gradient Boosting.
-                        <br>Skills: Survey Design · Statistical Sampling · Statistical Data Analysis
-                        <br>Instructor/Advisor: Fulya Gökalp Yavuz
-                    </p>
-                </div>
-            </li>
+          <li class="social-item">
+            <a href="https://github.com/abtinmu" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/abtinmo/" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
         </ul>
-    </div>
 
-    <!-- Teaching Section -->
-    <div id="teaching" class="section teaching" style="display: none;">
-        <h2>TEACHING</h2>  <!-- Section Heading -->
-        <ul>
-            <li>
-                <h3>Student Teaching Assistant</h3>
-                <p> I was a student assistant in the courses Mathematical Statistics I (STAT 303) and Mathematical Statistics II (STAT 304) during the 2022/2023 academic year.
-                        There, I led office hours for undergraduate students of the same year and provided weekly individualized support and guidance on course material and problem-solving.
-                        <br>Course Instructor: Zeynep Işıl Kalaylıoğlu
-                    </p>
+      </div>
+
+    </aside>
+
+
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            Hello! I'm a senior undergraduate student at Middle East Technical University, majoring in Statistics with a minor in 
+            Mathematics. My interests include probabilistic programming, computational cognitive science, and uncertainty-based deep
+            learning. Currently, I am working as an undergraduate research assistant under Professor Barbaros Yet, focusing on multi-agent
+            computational models of human decision-making. Additionally, I am a participator in the Teknofest 2024 AI competition, where I
+            work on an uncertainty-based Alzheimer’s diagnosis system for neurological and GWAS genetic datasets under the supervision
+            of Professor Ilkay Ulusoy.
+          </p>
+
+
+        </section>
+
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">My Interests</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">CogSci</h4>
+
+                <p class="service-item-text">
+                  How does our brain work?
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">ProbProg</h4>
+
+                <p class="service-item-text">
+                  I love working with uncertainty.
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Deep Learning</h4>
+
+                <p class="service-item-text">
+                  Keeping pace with the most recent AI advancements :)
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Linguistics</h4>
+
+                <p class="service-item-text">
+                  Exploring the philosophy of human communication.
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - testimonials modal
+        -->
+
+        <div class="modal-container" data-modal-container>
+          <div class="overlay" data-overlay></div>
+          <section class="testimonials-modal">
+            <button class="modal-close-btn" data-modal-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="modal-img-wrapper">
+              <figure class="modal-avatar-box">
+                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
+              </figure>
+              <img src="./assets/images/icon-quote.svg" alt="quote icon">
+            </div>
+            <div class="modal-content">
+            </div>
+          </section>
+        </div>
+        
+
+        <header>
+          <h2 class="h2 article-title">Notes and Slides</h2>
+        </header>
+
+        <section class="blog-posts">
+
+        <ul class="blog-posts-list">
+
+
+          <li class="blog-post-item">
+            <a href="./assets/files/NuroGen-DataPrep.pdf" target="_blank">
+
+              <figure class="blog-banner-box">
+                <img src="./assets/images/MRI.jpg" alt="MRI" loading="lazy">
+              </figure>
+
+              <div class="blog-content">
+
+                <div class="blog-meta">
+                  <p class="blog-category">Design</p>
+
+                  <span class="dot"></span>
+
+                  <time datetime="2022-02-23">Feb 23, 2022</time>
                 </div>
+
+                <h3 class="h3 blog-item-title">Manipulation of MR Neurological Data [notes]</h3>
+
+                <p class="blog-text">
+                </p>
+
+              </div>
+
+            </a>
+          </li>
+
+
+          <li class="blog-post-item">
+            <a href="./assets/files/NuroGen-DataPrep.pdf" target="_blank">
+
+              <figure class="blog-banner-box">
+                <img src="./assets/images/GWAS.avif" alt="GWAS" loading="lazy">
+              </figure>
+
+              <div class="blog-content">
+
+                <div class="blog-meta">
+                  <p class="blog-category">Design</p>
+
+                  <span class="dot"></span>
+
+                  <time datetime="2022-02-23">Feb 23, 2022</time>
+                </div>
+
+                <h3 class="h3 blog-item-title">Genetics GWAS Data Preprocessing [notes]</h3>
+
+                <p class="blog-text">
+                </p>
+
+              </div>
+
+            </a>
+          </li>
+
+          <li class="blog-post-item">
+            <a href="./assets/files/Banach-Tarski-Paradox.pdf" target="_blank">
+
+              <figure class="blog-banner-box">
+                <img src="./assets/images/banach-Tarski.png" alt="Banch-Tarski" loading="lazy">
+              </figure>
+
+              <div class="blog-content">
+
+                <div class="blog-meta">
+                  <p class="blog-category">Design</p>
+
+                  <span class="dot"></span>
+
+                  <time datetime="2022-02-23">Feb 23, 2022</time>
+                </div>
+
+                <h3 class="h3 blog-item-title">Banch-Tarski Paradox and Non-Measurable Sets [slides]</h3>
+
+                <p class="blog-text">
+                </p>
+
+              </div>
+
+            </a>
+          </li>
+
+          <li class="blog-post-item">
+            <a href="./assets/files/Bayesian-SDM.pdf" target="_blank">
+
+              <figure class="blog-banner-box">
+                <img src="./assets/images/Rational-SDM.jpg" alt="Rational SDM" loading="lazy">
+              </figure>
+
+              <div class="blog-content">
+
+                <div class="blog-meta">
+                  <p class="blog-category">Design</p>
+
+                  <span class="dot"></span>
+
+                  <time datetime="2022-02-23">Feb 23, 2022</time>
+                </div>
+
+                <h3 class="h3 blog-item-title">Multi-Agent Medical Shared-Decision Making [slides]</h3>
+
+                <p class="blog-text">
+                </p>
+
+              </div>
+
+            </a>
+          </li>
+
+
+          <li class="blog-post-item">
+            <a href="./assets/files/MCDropout-VIGP.pdf" target="_blank">
+
+              <figure class="blog-banner-box">
+                <img src="./assets/images/MCDropout.png" alt="GWAS" loading="lazy">
+              </figure>
+
+              <div class="blog-content">
+
+                <div class="blog-meta">
+                  <p class="blog-category">Design</p>
+
+                  <span class="dot"></span>
+
+                  <time datetime="2022-02-23">Feb 23, 2022</time>
+                </div>
+
+                <h3 class="h3 blog-item-title">MCDropot and VI based Gaussian Processes [slides]</h3>
+
+                <p class="blog-text">
+                </p>
+
+              </div>
+
+            </a>
+          </li>
+        </ul>
+</section>
+
+
+
+            
+
+
+      </article>
+
+
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume</h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Middle East Technical University</h4>
+
+              <span>2020 — 2025</span>
+
+              <p class="timeline-text">
+                <li class="timeline-text">
+                  Major in Statistics (CGPA 3.90)
+                </li>
+                <li class="timeline-text">
+                  Minor in Mathematics (CGPA 4.00)
+                </li>
+                <li class="timeline-text">
+                  Graduate Coursework: Probability Theory, Probabilistic Programming, Probabilistic Models of Cognition, Deep Learning (year long), Computational Semantics and Syntax (year long)
+                </li>
+              </p>
+
+            </li>
+
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Research (Undergraduate Researcher)</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Alzheimer's Diagnosis System (Advisor: İlkay Ulusoy)</h4>
+
+              <span>Aug 2023 - Present</span>
+
+              <p class="timeline-text">
+                As the data team leader, designed and oversaw the preprocessing and analysis process of ADNI’s fMRI, MRI, and GWAS genetic datasets. • Using deep learning approaches to construct a diagnosis system for Alzheimer’s. • Worked on Dynamic Bayesian Networks developed from fMRI images, applying statistical tests and comparing Alzheimer's vs Normal Brain region’s connectivity.
+              </p>
+
+            </li>
+
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Multi-Agent Rational Shared Decision-Making (Instructor/Advisor: Barbaros Yet)</h4>
+
+              <span>Feb 2024 - Present</span>
+
+              <p class="timeline-text">
+                In this project, I  worked on the development of a novel approach to Medical Shared Decision Making using Appraisal Theory and Rational Speech Acts frameworks. The focus was to model a multi agent system to model a medical shared decision-making scenario between a cancer patient, a doctor, and a family member of the patient.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Common Carotid Artery Segmentation (Short-Term Advisor: Ramazan Gökberk Cinbiş)</h4>
+
+              <span>Dec 2022 - Oct 2023</span>
+
+              <p class="timeline-text">
+                In this project I contributed to the development and implementation of transformers-based deep learning models for Carotid Artery Ultrasound segmentation. • Implemented multiple deep learning-based architectures and contributed to surpassing previous benchmark results.
+              </p>
+
+            </li>
+
+            
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Satisfaction Survey (Instructor/Advisor: Fulya Gökalp Yavuz)</h4>
+
+              <span>Nov 2022 - Jan 2023</span>
+
+              <p class="timeline-text">
+                We conducted a survey on international students at 17 top Turkish universities about their motivations, expectations, and satisfaction using the poststratification sampling method. Then, we analyzed the results using statistial modeling and Bayesian networks.
+              </p>
+
+            </li>
+            
+          </ol>
+
+
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Teaching</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Student Teaching Assistant (Course Instructor: Zeynep Işıl Kalaylıoğlu)</h4>
+
+              <p class="timeline-text">
+                I was the student assistant for upper devision theoretical courses, Mathematical Statistics I (STAT 303) and Mathematical Statistics II (STAT 304) during the 2022/2023 academic year. I led office hours for undergraduate students and provided weekly individualized support and guidance on course material and problem-solving.
+              </p>
+
+            </li>
+
+
+          </ol>
+
+
+
+        </section>
+
+        <section class="skill">
+
+          <h3 class="h3 skills-title">My skills</h3>
+
+          <ul class="skills-list content-card">
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h51">Computational Cognitive Science</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h51">Deep Learning</h5>
+                <data value="80">80%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 80%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h51">Statistical Data Analysis</h5>
+                <data value="90">90%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 90%;"></div>
+              </div>
+
+            </li>
+
+            <li class="skills-item">
+
+              <div class="title-wrapper">
+                <h5 class="h51">Structure and Interpretation of Computer Programs</h5>
+                <data value="50">50%</data>
+              </div>
+
+              <div class="skill-progress-bg">
+                <div class="skill-progress-fill" style="width: 50%;"></div>
+              </div>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+      <article class="portfolio" data-page="portfolio">
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+        <section class="projects">
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+          </div>
+        </section>
+      </article>
+
+
+
+      <!--
+        - #PROJECTS
+      -->
+
+      <article class="projects" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Projects</h2>
+        </header>
+
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Projects</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">CCG Semantic Parser [Ongoing]</h4>
+
+              <p class="timeline-text">
+                Implemented a simple CCG-based semantic parser in Python. For the syntactic rules , Combinatory Categorical Grammar (CCG) alongside internal merge grammar was used, and for logic and semantics, Lambda Calculus and Modality Logic were implemented.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Make Me a BNN</h4>
+
+              <p class="timeline-text">
+              Implemented and reproduced the results of the paper "Make Me a BNN: A Simple Strategy for Estimating Bayesian Uncertainty from Pre-trained Models.", CVPR 2024 from scratch.
             </p>
-        </ul>
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Scheme Interpreter</h4>
+
+              <p class="timeline-text">
+                Implemented a Scheme interpreter in Julia. For a large part, I followed the content of SICP Textbook and Peter Noverg's Tutorials.
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Politeness Rational Model</h4>
+
+              <!-- <span>2013 — 2015</span> -->
+
+              <p class="timeline-text">
+                Implemented and reproduced the full results of the rational speech acts model of politeness in Gen probabilistic programming language.
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">BART's Bayesian Analysis</h4>
+
+              <!-- <span>2013 — 2015</span> -->
+
+              <p class="timeline-text">
+                Applied Bayesian methods in analysis of the BART dataset (Balloon Analog Risk Task). Bayesian Linear models, Bayesian Non-linear models, Bayesian Multi-level Models, and Bayesian Gaussian processes were used. 
+              </p>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">Human Activity Recognition</h4>
+
+              <!-- <span>2013 — 2015</span> -->
+
+              <p class="timeline-text">
+                Machine Learning models in Human Activity Recognition Using Smartphones dataset as a competitor in a Kaggle competition.
+            </li>
+          </ol>
+
+
+        </section>
+
+
+      </article>
+
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6224060.046785074!2d30.701806107425728!3d38.96374596982795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d34ef4f81a4b45%3A0x9b0c3b8b5ed15763!2sAnkara%2C%20Turkey!5e0!3m2!1sen!2sus!4v1647608789441!5m2!1sen!2sus"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
     </div>
+
+  </main>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
