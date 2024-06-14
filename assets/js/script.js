@@ -149,3 +149,25 @@ document.querySelectorAll('[data-nav-link]').forEach(navLink => {
     targetPage.scrollIntoView({ behavior: 'smooth' });
   });
 });
+
+
+// JavaScript to zoom out the page
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.innerWidth >= 992) { // Apply only to desktop browsers
+    document.body.style.zoom = "0.85"; // Set the zoom level to 90%
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+  const navbarLinks = document.querySelectorAll(".navbar-link");
+
+  navbarLinks.forEach(link => {
+    link.addEventListener("click", function() {
+      // Remove the active class from all navbar links
+      navbarLinks.forEach(navLink => navLink.classList.remove("active"));
+
+      // Add the active class to the clicked link
+      this.classList.add("active");
+    });
+  });
+});
