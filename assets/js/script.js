@@ -154,6 +154,7 @@ document.querySelectorAll('[data-nav-link]').forEach(navLink => {
 // JavaScript to zoom out the page
 document.addEventListener("DOMContentLoaded", function() {
   document.body.style.zoom = "0.75"; // Set the zoom level to 75%
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const navbarLinks = document.querySelectorAll(".navbar-link");
