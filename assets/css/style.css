@@ -1359,7 +1359,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: 584px;
+    max-height: none;
     margin-bottom: 30px;
   }
 
