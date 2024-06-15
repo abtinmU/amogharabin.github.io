@@ -154,7 +154,7 @@ document.querySelectorAll('[data-nav-link]').forEach(navLink => {
 // JavaScript to zoom out the page
 document.addEventListener("DOMContentLoaded", function() {
   if (window.innerWidth >= 992) { // Apply only to desktop browsers
-    document.body.style.zoom = "0.85"; // Set the zoom level to 90%
+    document.body.style.zoom = "0.83"; // Set the zoom level to 83%
   }
 });
 
