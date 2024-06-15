@@ -323,10 +323,17 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
-  margin-bottom: 15px;
-  margin-left: 15px;
-  max-height: 405px; /* Increase the height to ensure it contains all content */
-  transition: var(--transition-2);
+  max-height: 8000px;
+  max-width: none;
+  overflow: visible;
+  padding-bottom: 80px;
+}
+
+/* Media query for large devices */
+@media only screen and (orientation : landscape) and (min-width: 600px) {
+  .sidebar {
+    padding-bottom: 30px;
+  }
 }
 
 .sidebar.active { max-height: 405px; }
