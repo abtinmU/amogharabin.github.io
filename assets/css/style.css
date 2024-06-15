@@ -59,7 +59,7 @@
   --jet: hsl(0, 87%, 45%);
   --onyx: hsl(240, 1%, 17%);
   --eerie-black-1: hsla(0, 0%, 0%, 0.549);
-  --eerie-black-2: hsla(240, 2%, 33%, 0.368);
+  --eerie-black-2: hsla(240, 2%, 33%, 0.308);
   --smoky-black: hsl(65, 41%, 89%);
   --white-1: hsl(0, 0%, 100%);
   --white-2: hsl(61, 100%, 90%);
@@ -1910,16 +1910,20 @@ textarea.form-input::-webkit-resizer { display: none; }
 	 * FOOTER
 	 */
 
-.footer {
-    position: fixed; 
-    top: 110.5vh; 
-    left: 19.5vw; 
+   .footer {
+    position: absolute;
+    bottom: 60px; /* Initial position to hide it */
+    left: 35vw;
     padding: 5px;
-    font-size: 12px;
-    color: #333; 
-    line-height: 1.5; 
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+    transition: bottom 0.4s ease-in-out; /* Smooth transition */
 }
 
+.about.active .footer.visible {
+    bottom: 10px; /* Adjust this to the final visible position */
+}
 
 
 
