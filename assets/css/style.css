@@ -329,6 +329,15 @@ main {
   transition: var(--transition-2);
 }
 
+
+/* Media query for portrait orientation on small devices */
+@media only screen and (orientation : portrait) and (max-width: 500px) {
+  .sidebar {
+    padding-bottom: 80px;
+  }
+}
+
+
 .sidebar.active { max-height: 405px; }
 
 .sidebar-info {
@@ -1930,7 +1939,6 @@ textarea.form-input::-webkit-resizer { display: none; }
 .about.active .footer.visible {
     bottom: 10px; /* Adjust this to the final visible position */
 }
-
 
 
   /**
