@@ -153,7 +153,7 @@ document.querySelectorAll('[data-nav-link]').forEach(navLink => {
 
 // JavaScript to zoom out the page
 document.addEventListener("DOMContentLoaded", function() {
-  document.body.style.zoom = "0.8255"; // Set the zoom level to 82.55%
+  document.body.style.zoom = "0.82";
 });
 
 

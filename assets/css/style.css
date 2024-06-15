@@ -323,19 +323,11 @@ main {
 \*-----------------------------------*/
 
 .sidebar {
-  max-height: 8000px;
-  max-width: none;
-  overflow: visible;
-  padding-bottom: 80px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  max-height: 405px; /* Increase the height to ensure it contains all content */
+  transition: var(--transition-2);
 }
-
-/* Media query for large devices */
-@media only screen and (orientation : landscape) and (min-width: 600px) {
-  .sidebar {
-    padding-bottom: 30px;
-  }
-}
-
 
 .sidebar.active { max-height: 405px; }
 
@@ -1367,21 +1359,10 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   .sidebar {
-    max-height: none;
+    max-height: 8000px;
     max-width: none;
     overflow: visible;
-    margin-bottom: 30px;
   }
-
-  @media (max-width: 767px) {
-    .sidebar {
-      max-height: 80vh;
-      overflow-y: auto;
-      overflow-x: hidden;
-      max-width: 100%;
-    }
-  }
-
 
   .sidebar.active { max-height: 584px; }
 
@@ -1938,6 +1919,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 .about.active .footer.visible {
     bottom: 10px; /* Adjust this to the final visible position */
 }
+
 
 
   /**
