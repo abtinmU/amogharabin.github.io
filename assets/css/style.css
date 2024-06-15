@@ -331,7 +331,7 @@ main {
 
 
 /* Media query for portrait orientation on small devices */
-@media only screen and (orientation : portrait) and (max-width: 500px) {
+@media only screen and (orientation : portrait) {
   .sidebar {
     padding-bottom: 80px;
   }
