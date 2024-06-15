@@ -1360,8 +1360,20 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar {
     max-height: none;
+    max-width: none;
+    overflow: visible;
     margin-bottom: 30px;
   }
+
+  @media (max-width: 767px) {
+    .sidebar {
+      max-height: 80vh;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+  }
+
 
   .sidebar.active { max-height: 584px; }
 
