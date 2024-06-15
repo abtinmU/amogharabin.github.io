@@ -1358,10 +1358,18 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #SIDEBAR
    */
 
-  .sidebar {
+   .sidebar {
     max-height: 8000px;
     max-width: none;
     overflow: visible;
+    padding-bottom: 20px;
+  }
+
+  /* Media query for large devices */
+  @media only screen and (orientation : landscape) and (min-width: 600px) {
+    .sidebar {
+      padding-bottom: 30px;
+    }
   }
 
   .sidebar.active { max-height: 584px; }
